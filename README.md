@@ -24,7 +24,7 @@ Many attempts were made to patch DNS and allow DNS zones to store TLS certificat
 
 As we discussed, many problems are related to local root certificate stores. At Fabco, we are convinced that too much trust is delegated to local stores and their trusted certificates. Revocated certificates are still used by end users and no system give this garantee today. Also, in practice, anyone that wants to secure their public communications, **has** to provide a certificate signed by one these trusted certificates. They are owned by certificate authorities, whom are all exposed to security issues. If just one authority is compromised, all public secured communications are compromised because a root authority can create a certificate for any domain **without the owner's permission**. Today, we implicitly accept this **single point of failure** because it's the only effectuve way to secure communications and transactions on Internet.
 
-## Solutions
+## No more local trusted store ! 
 
 People and companies just want to communicate in a private manner on Internet. For communications without significant value, the web public key infrastructure is an acceptable tradeoff. But is it an acceptable solution within a world more and more digitalized where the amount of value transactions has totally skyrocketed in recent years ? Today, [home ownership can be digitalized using NFTs](https://www.forbes.com/sites/forbesbusinesscouncil/2022/02/16/nfts-and-the-future-of-commercial-real-estate/) and exchanged publicly and the number of cyber attacks has never been so high.
 
