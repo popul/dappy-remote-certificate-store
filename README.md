@@ -42,15 +42,15 @@ One of the central ideas of our research and products at FABCO, and also a point
 Secure communications implies that a client authenticates a server and they both exchange messages in a encrypted fashion. **The dappy name system** is a public name and PKI system that aims at solving the aforementioned issues related to server authentication like inconsistencies with DNS, use of invalid certificates, lack of transparency and TLS interception possibilities.
 
 [**Dappy name system**](https://github.com/fabcotech/dappy-propositions/blob/master/01_co_resolution.MD) is a hierarchical name system like [DNS](https://en.wikipedia.org/wiki/Domain_Name_System), that :
-- Is built in a 100% open source fashion
-- Runs on the blockchain and is free from mismanagement or unilateral censorship
 - Allows companies and people to own [TLDs](https://en.wikipedia.org/wiki/Top-level_domain)
 - Distribute trusted certificates or their fingerprints along side this TLD 
 - Includes a network of independant companies that act as DNS resolvers, and allow clients to do co-resolution
+- Is built in a 100% open source fashion
+- Runs on the blockchain and is free from mismanagement or unilateral censorship
 
-The dappy name system is a **remote trusted certificate store**, it distributes trusted certificates to end users (or clients). Applications built on top of dappy, such as the [dappy browser](https://github.com/fabcotech/dappy), dappy agent (name and certificate client resolver), and librairies like the [dappy lookup](https://github.com/fabcotech/dappy-lookup) will **fetch trusted certificates dynamically**, removing all the problems with revocated trusted certificates. Data integrity is resolved using [co-resolution](https://github.com/fabcotech/dappy-propositions/blob/master/01_co_resolution.MD#4-co-resolution), a trustless mecanism, used to query dappy name system.
+The dappy name system is a **remote trusted certificate store**, it plays the role of public identity registry and helps to authenticate TLS participants by distributing trusted certificates. Applications built on top of dappy, such as the [dappy browser](https://github.com/fabcotech/dappy), dappy agent (name and certificate client resolver), and librairies like the [dappy lookup](https://github.com/fabcotech/dappy-lookup) will **fetch trusted certificates dynamically**, removing all the problems with revocated trusted certificates. Data integrity is resolved using [co-resolution](https://github.com/fabcotech/dappy-propositions/blob/master/01_co_resolution.MD#4-co-resolution), a trustless mecanism, used to query dappy name system.
 
-Trusted certificates are **always related to a domain name** and they are resolved at runtime by walking through the dappy name system from leaf to root during name resolution (if not found on a.example.d, trusted from example.d is taken). Companies and institutions don't have to trust and transfer their identity to a third party, like a public certificate authority.
+**Dappy authentication** protocol consists of resolving trusted certificates at runtime by walking through the dappy name system from leaf to root during name resolution (if not found on a.example.d, trusted from example.d is taken). Certificates are **always related to a domain name**. Companies and institutions don't have to trust and transfer their identity to a third party, like a public certificate authority.
 
 But **Dappy name system** wants to do more for companies or teams that didn't have their own PKI or don't want to use an external one. To enable clients to trust their server certificate, the idea is to save certificates fingerprints in Dappy name system, in TLSA records like [DANE](https://datatracker.ietf.org/doc/html/rfc7671) does. In that way, clients can verify the authenticity and integrity of server certificates without PKI. We are convinced that software development teams will love how is that simple to enable TLS communcations with Dappy.
 
